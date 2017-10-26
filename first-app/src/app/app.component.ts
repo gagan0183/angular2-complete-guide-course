@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   delete = false;
+  val = 'starting value';
+  boundvalue = 99;
 }

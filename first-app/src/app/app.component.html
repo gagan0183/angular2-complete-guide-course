@@ -1,5 +1,11 @@
 <h1>
   Inline Template
 </h1>
-<app-lifecycle *ngIf="!delete"></app-lifecycle>
+<app-lifecycle *ngIf="!delete" [bindable]="boundvalue">
+  <p>
+    {{val}}
+  </p>
+</app-lifecycle>
 <button (click)="delete=true">This</button>
+<button (click)="val = 'Changing value'">Change content</button>
+<button (click)="boundvalue = 909">Change content value</button>
