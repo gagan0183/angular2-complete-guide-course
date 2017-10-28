@@ -6,9 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  private switchField = true;
+  private switch = true;
+  private items = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-  switch() {
-    this.switchField = !this.switchField;
+  onSwitch() {
+    this.switch = !this.switch;
   }
 }
