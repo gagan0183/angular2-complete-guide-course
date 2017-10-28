@@ -7,8 +7,8 @@
 <hr>
 <h1>Structural directives</h1>
 <h2>*ngIf</h2>
-<div *ngIf="switchField">Conditional text</div>
-<button (click)="switch()">Click</button>
+<div *ngIf="switch">Conditional text</div>
+<button (click)="onSwitch()">Click</button>
 <hr>
 <h2>*ngFor</h2>
 <ul>
@@ -20,3 +20,4 @@
   <p *ngSwitchCase="90">This is 90</p>
   <p *ngSwitchCase="9">This is 9</p>
 </div>
+<div *unless="switch">Conditional text</div>
