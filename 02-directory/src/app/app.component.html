@@ -14,3 +14,9 @@
 <ul>
   <li *ngFor="let item of items; let i = index">{{item}} (index) = {{i}}</li>
 </ul>
+<hr>
+<h2>Switch</h2>
+<div [ngSwitch]="value">
+  <p *ngSwitchCase="90">This is 90</p>
+  <p *ngSwitchCase="9">This is 9</p>
+</div>
