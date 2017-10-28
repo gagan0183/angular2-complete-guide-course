@@ -5,18 +5,22 @@ import { Directive, ElementRef, HostListener, HostBinding, Renderer } from '@ang
 })
 export class HighlightDirective {
   private elementRef: ElementRef;
+  private backgroundColor = 'purple';
   constructor(elementRef: ElementRef, private renderer: Renderer) {
     this.elementRef = elementRef;
     //this.elementRef.nativeElement.style.backgroundColor = 'green';
     //this.renderer.setElementStyle(this.elementRef.nativeElement, 'background-color', 'green');
   }
 
-
   @HostListener('mouseenter') mouseover() {
-    this.elementRef.nativeElement.style.backgroundColor = 'green';
+    this.backgroundColor = 'green';
   }
 
   @HostListener('mouseleave') mouseleave() {
-    this.elementRef.nativeElement.style.backgroundColor = 'white';
+    this.backgroundColor = 'blue';
+  }
+
+  @HostBinding('style.backgroundColor') get setColor() {
+    return this.backgroundColor;
   }
 }
