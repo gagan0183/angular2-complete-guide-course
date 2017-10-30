@@ -16,7 +16,7 @@ export class UserComponent {
   private id: string;
 
   onNavigate() {
-    this.router.navigate(['/']);
+    this.router.navigate(['/'], {queryParams: {'analytics': 9}});
   }
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {
     this.subscription = this.activatedRoute.params.subscribe(
