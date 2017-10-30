@@ -7,6 +7,7 @@ import { HomeComponent } from './home-component.component';
 import { UserDetailComponent } from './user/user-detail.component';
 import { UserEditComponent } from'./user/user-edit.component';
 import { UserDetailGuard } from './user/user-detail.guard';
+import { UserEditGuard } from './user/user.edit.guard';
 
 import { AppComponent } from './app.component';
 import { routing } from './app.routing';
@@ -25,7 +26,7 @@ import { routing } from './app.routing';
     HttpModule,
     routing
   ],
-  providers: [UserDetailGuard],
+  providers: [UserEditGuard, UserDetailGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
