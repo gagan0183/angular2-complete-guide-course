@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-xs-10">
       <h1>Hello World!</h1>
-      <a [routerLink]="['']">Home</a>
+      <a [routerLink]="['']" [queryParams]="{analytics: 90}">Home</a>
       <input type="text" #id (input)="0">
       <a [routerLink]="['user', id.value]">User</a>
       <router-outlet></router-outlet>
