@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
     moduleId: module.id,
     selector: 'app-user-detail',
     template: `
-      <h3>Some user Details</h3>
+      <h3>Some user</h3>
     `
 })
 export class UserDetailComponent {

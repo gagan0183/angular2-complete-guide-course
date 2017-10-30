@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { UserComponent } from './user/user.component';
 import { HomeComponent } from './home-component.component';
+import { UserDetailComponent } from './user/user-detail.component';
+import { UserEditComponent } from'./user/user-edit.component';
 
 import { AppComponent } from './app.component';
 import { routing } from './app.routing';
@@ -12,7 +14,9 @@ import { routing } from './app.routing';
   declarations: [
     AppComponent,
     UserComponent,
-    HomeComponent
+    HomeComponent,
+    UserDetailComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,

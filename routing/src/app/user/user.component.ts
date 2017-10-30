@@ -8,6 +8,8 @@ import { Subscription } from 'rxjs/rx';
       <h1>User Component</h1>
       <button (click)="onNavigate()">Go home</button>
       {{id}}
+      <hr>
+      <router-outlet></router-outlet>
     `
 })
 export class UserComponent {
