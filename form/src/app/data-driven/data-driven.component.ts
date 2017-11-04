@@ -15,14 +15,13 @@ export class DataDrivenComponent {
   constructor() {
     this.myForm = new FormGroup({
       'userData': new FormGroup({
-        'username': new FormControl('Max', Validators.required),
+        'username': new FormControl('Max', [Validators.required, this.exampleValidator]),
         'email': new FormControl('', [Validators.required, Validators.pattern("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")])
       }),
       'password': new FormControl('', Validators.required),
       'gender': new FormControl('male'),
       'hobbies': new FormArray([
-        new FormControl('Cooking', Validators.required),
-        new FormControl('Sports', Validators.required)
+        new FormControl('Cooking', Validators.required)
       ])
     });
   }
@@ -33,5 +32,12 @@ export class DataDrivenComponent {
 
   onSubmit() {
     console.log(this.myForm);
+  }
+
+  exampleValidator(control: FormControl): {[s: string]: boolean} {
+    if(control.value === 'Example') {
+      return {example: true};
+    }
+    return null;
   }
 }
