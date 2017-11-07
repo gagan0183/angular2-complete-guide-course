@@ -11,7 +11,7 @@ export class AppComponent {
 
   ngOnInit() {
     this.httpService.httpGet().subscribe(
-      (data) => console.log(data)
+      (data: any) => console.log(data)
     );
   }
 }
