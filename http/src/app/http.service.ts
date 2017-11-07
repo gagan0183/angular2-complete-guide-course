@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
-import 'rxjs/rx';
+import { Observable } from 'rxjs/rx';
 
 @Injectable()
 export class HttpService {
@@ -12,6 +12,9 @@ export class HttpService {
             .map((response: Response) => response.json());
   }
 
+
+
+
   post(user: any) {
     const body = user;
     let headers = new Headers({
@@ -20,6 +23,13 @@ export class HttpService {
     return this.http.post('https://angular-c5649.firebaseio.com/senddata.json', body, {
       headers: headers
     })
-    .map((data) => data.json());
+    .map((data) => data.json())
+    .catch(this.handleError);
+  }
+
+
+  private handleError(error: any) {
+    console.log(error);
+    return Observable.throw(error.json());
   }
 }

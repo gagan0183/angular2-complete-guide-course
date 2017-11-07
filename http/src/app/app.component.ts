@@ -17,6 +17,7 @@ export class AppComponent {
 
   onSubmit(username: string, email: string) {
     this.httpService.post({username: username, email: email})
-      .subscribe((data) => console.log(data))
+      .subscribe((data) => console.log(data),
+                  (error) => console.log(error));
   }
 }
